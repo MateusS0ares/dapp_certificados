@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard do Aluno</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Toast container -->
+  <div class="toast-container">
+    {% with messages = get_flashed_messages(with_categories=True) %}
+      {% for category, message in messages %}
+        <div class="toast {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="/logout">Logout</a>
+    <span class="saldo">Saldo: {{ saldo }} CTK</span>
+  </div>
+
+  <main class="container">
+    <h1 class="titulo">Dashboard do Aluno</h1>
+
+    <!-- Cards -->
+    <section class="cards">
+      <div class="card">
+        <h2>Visualizar Meus Certificados</h2>
+        <form method="POST" action="/dashboard/aluno">
+          <button type="submit">Visualizar</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Transferir CTK</h2>
+        <form method="POST" action="/transferir">
+          <input type="text" name="destinatario" placeholder="Endereço do destinatário" required>
+          <input type="number" name="quantidade" placeholder="Quantidade de CTK" required>
+          <button type="submit">Transferir</button>
+        </form>
+      </div>
+    </section>
+    
+    <!-- Resultados da consulta -->
+    {% if certificados %}
+    <section class="resultado">
+      <div class="card-grande">
+        <h3>Certificados encontrados:</h3>
+        <ul>
+          {% for c in certificados %}
+          <li><strong>{{ c[0] }}</strong> - {{ c[1] }} ({{ c[2] }}) | ID: {{ c[3] }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+    {% endif %}
+  </main>
+
+  <script>
+    // Função para remover os toasts após 5 segundos
+    document.addEventListener('DOMContentLoaded', () => {
+      const toasts = document.querySelectorAll('.toast');
+      toasts.forEach(toast => {
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          setTimeout(() => toast.remove(), 500); // Remove o elemento após a animação
+        }, 5000); // Tempo de exibição: 5 segundos
+      });
+    });
+  </script>
+</body>
+</html>

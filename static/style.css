@@ -1,0 +1,165 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Navbar azul */
+    .navbar {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 10px;
+      justify-content: right;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar .saldo {
+      font-size: 1em;
+    }
+
+.titulo {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+  color: #2c3e50;
+}
+
+/* Cards laterais */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: calc(50% - 10px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  font-size: 1.3em;
+  color: #34495e;
+}
+
+.card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card input,
+.card select,
+.card button {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.card button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #2980b9;
+}
+
+/* Card grande para resultados */
+.resultado .card-grande {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card-grande h3 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.card-grande ul {
+  list-style-type: none;
+}
+
+.card-grande li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.card-grande li:last-child {
+  border-bottom: none;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+}
+
+/* Toast container */
+    .toast-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .toast {
+      background-color: #fcfcfcd2;
+      color: #000000;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .toast.error {
+      background-color: #e74c3c;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }

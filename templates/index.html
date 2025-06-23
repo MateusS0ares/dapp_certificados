@@ -1,0 +1,74 @@
+<!-- <h1>DApp de Certificados</h1>
+<ul>
+  <li><a href="/emitir">Emitir Certificado</a></li>
+  <li><a href="/aluno">Visualizar Meus Certificados</a></li>
+  <li><a href="/transferir">Transferir CertiTokens</a></li>
+  <li><a href="/saldo">Saldo</a></li>
+  <li><a href="/queimar">Queimar CertiTokens</a></li>
+  <li><a href="/verificar">Verificar Certificado</a></li>
+</ul> -->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dapp - Certificados</title>
+  <link rel="icon" href="{{ url_for('static', filename='/img/favicon.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Toast container -->
+  <div class="toast-container">
+    {% with messages = get_flashed_messages(with_categories=True) %}
+      {% for category, message in messages %}
+        <div class="toast {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+  </div>
+
+  <main class="container">
+    <h1 class="titulo">Sistema de Certificados</h1>
+
+    <!-- Cards de Login e Consulta -->
+    <section class="cards">
+
+      <!-- Card Consulta -->
+      <div class="card">
+        <h2>Consultar Certificados</h2>
+        <form method="POST" action="/">
+          <input type="text" name="aluno" placeholder="Insira o endereço" required>
+          <button type="submit">Consultar</button>
+        </form>
+      </div>
+
+      <!-- Card Login -->
+      <div class="card">
+        <h2>Login</h2>
+        <form method="POST" action="/login">
+          <input type="text" name="usuario" placeholder="Usuário" required>
+          <input type="password" name="senha" placeholder="Senha" required>
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+
+    </section>
+
+    <!-- Resultados da consulta -->
+    {% if certificados %}
+    <section class="resultado">
+      <div class="card-grande">
+        <h3>Certificados encontrados:</h3>
+        <ul>
+          {% for c in certificados %}
+          <li><strong>{{ c[0] }}</strong> - {{ c[1] }} ({{ c[2] }}) | ID: {{ c[3] }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+    {% endif %}
+
+  </main>
+</body>
+</html>
