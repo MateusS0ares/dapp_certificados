@@ -35,13 +35,13 @@ cd dapp_certificados
 ### 2. Crie e ative um ambiente virtual
 No Linux/MacOS:
 ```bash
-python3 -m venv weather_rpc
-source weather_rpc/bin/activate
+python3 -m venv dapp_certificados
+source dapp_certificados/bin/activate
 ```
 No Windows:
 ```bash
-python -m venv weather_rpc
-weather_rpc\Scripts\activate
+python -m venv dapp_certificados
+dapp_certificados\Scripts\activate
 ```
 ### 3. Instale as dependências
 ```bash
@@ -59,3 +59,10 @@ python app.py
 ```
 ### 6. Acesse a aplicação
 Abra o navegador e acesse `http://localhost:5000` para ver a interface do cliente Flask.
+
+## Interface da aplicação
+![Index](https://github.com/MateusS0ares/dapp_certificados/blob/main/static/img/index.png?raw=true)
+
+![Admin](https://github.com/MateusS0ares/dapp_certificados/blob/main/static/img/admin.png?raw=true)
+
+![Aluno](https://github.com/MateusS0ares/dapp_certificados/blob/main/static/img/student.png?raw=true)
