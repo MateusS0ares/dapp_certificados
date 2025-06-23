@@ -1,0 +1,220 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "aluno",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "nomeAluno",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "curso",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "data",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "id",
+				"type": "string"
+			}
+		],
+		"name": "emitirCertificado",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "administrador",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "certificados",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "nomeAluno",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "curso",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "data",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "id",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "certificadosPorId",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "nomeAluno",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "curso",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "data",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "id",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "donoDoCertificado",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "aluno",
+				"type": "address"
+			}
+		],
+		"name": "getCertificados",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "nomeAluno",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "curso",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "data",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "id",
+						"type": "string"
+					}
+				],
+				"internalType": "struct Certificado.Cert[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "id",
+				"type": "string"
+			}
+		],
+		"name": "verificarCertificado",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "nomeAluno",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "curso",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "data",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "dono",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
